@@ -1,34 +1,25 @@
-import React from "react";
+import React from 'react'
 
-//npm install react-router-dom --save
+// npm install react-router-dom --save
 import {
   BrowserRouter,
   Route,
   Link,
   Routes
-} from "react-router-dom";
-import Home from "./view/home/Home";
-import Main from "./view/main/Main";
+} from 'react-router-dom'
+import Header from './Header'
+import NotFound from './NotFound'
 
-
-
-function App() {
+function App () {
   return (
     <BrowserRouter>
-      <div>
-        <nav>
-          <ul>
-            <li><Link to="/">Home</Link></li>
-            <li><Link to="/main">Main</Link></li>
-          </ul>
-        </nav>
-        <Routes>
-          <Route path="/" element={<Home />}/>
-          <Route path="/main" element={<Main />}/>
-        </Routes>
-      </div>
+      <Header />
+      <Routes>
+
+      <Route path="*" element={<NotFound />}></Route>
+      </Routes>
     </BrowserRouter>
-  );
+  )
 }
 
-export default App;
+export default App
